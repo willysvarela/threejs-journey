@@ -1,11 +1,10 @@
 import * as THREE from 'three';
-import { Vector3 } from 'three';
 import { AxesHelper } from 'three';
 
  const scene = new THREE.Scene();
 
  const geometry = new THREE.BoxGeometry(1, 1 ,1);
-const material = new THREE.MeshBasicMaterial({color: 0xff0000});
+const material = new THREE.MeshBasicMaterial({color: 0xfff111});
 const mesh = new THREE.Mesh(geometry, material);
 
 // Position
@@ -15,6 +14,8 @@ mesh.position.z = 1;
 
 // Scale
 mesh.scale.x = 0.1;
+mesh.scale.y = 2;
+mesh.scale.z = 3;
 
 const axes = new AxesHelper();
 
@@ -22,8 +23,8 @@ const axes = new AxesHelper();
 mesh.rotation.reorder('XYZ'); //default
 mesh.rotation.reorder('XYZ');
 mesh.rotation.x = Math.PI / 2;
-mesh.rotation.y = 2;
-mesh.rotation.z = 2;
+mesh.rotation.y = (Math.PI / 2) + 0.1;
+mesh.rotation.z = 3;
 
 scene.add(axes);
 
@@ -53,8 +54,23 @@ const cube1 = new THREE.Mesh(
     new THREE.MeshBasicMaterial({ color: 0xffcf6e })
 );
 
+const cube2 = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshBasicMaterial({ color: 0xffc000 })
+);
+
+const cube3 = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshBasicMaterial({ color: 0x00c000 })
+);
+
+cube2.position.x = 1.3;
+cube3.position.x = -1.3;
+
 group.add(cube1);
-group.position.x = -1;
+group.add(cube2);
+group.add(cube3);
+group.rotation.y = 0.1;
 
 scene.add(group);
 

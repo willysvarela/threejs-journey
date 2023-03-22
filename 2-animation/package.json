@@ -1,0 +1,19 @@
+{
+  "name": "2-animation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src.script.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gsap": "^3.11.5",
+    "three": "^0.150.1"
+  },
+  "devDependencies": {
+    "vite": "^4.2.1"
+  }
+}
