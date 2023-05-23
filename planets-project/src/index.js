@@ -51,7 +51,7 @@ const buildLight = () => {
 };
 buildLight();
 
-const texture = new TextureLoader().load('textures/sun_texture.jpg');
+const texture = new TextureLoader().load('../dist/textures/sun_texture.jpg');
 const sunMaterial = new MeshBasicMaterial({ color: 0xffffff, map: texture });
 const sun = new THREE.Mesh(new SphereGeometry(SUN_SIZE), sunMaterial);
 
